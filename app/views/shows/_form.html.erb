@@ -10,33 +10,34 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
+  <br/>
+  <div class="field form-group">
     <%= form.label :name %>
-    <%= form.text_field :name %>
+    <%= form.text_field :name, class:"form-control", placeholder:"TV Show Name" %>
   </div>
-
-  <div class="field">
+  <br/>
+  <div class="field form-group">
     <%= form.label :genre %>
-    <%= form.text_field :genre %>
+    <%= form.text_field :genre, class:"form-control"%>
   </div>
-
-  <div class="field">
+  <br/>
+  <div class="field form-group">
     <%= form.label :review %>
-    <%= form.text_field :review %>
+    <%= form.text_field :review, class:"form-control" %>
   </div>
-
-  <div class="field">
+  <br/>
+  <div class="field form-group">
     <%= form.label :similarity %>
-    <%= form.text_field :similarity %>
+    <%= form.text_field :similarity, class:"form-control", placeholder:"Similar Shows" %>
   </div>
-
-  <div class="field">
+  <br/>
+  <div class="field form-group">
     <%= form.label :rating %>
-    <%= form.text_field :rating %>
+    <%= form.text_field :rating, class:"form-control" %>
   </div>
-
+  <br/>
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit class:'btn btn-outline-info'%>
   </div>
+  <br/>
 <% end %>
