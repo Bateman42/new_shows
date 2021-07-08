@@ -12,16 +12,7 @@
             <%= link_to "About This Project", home_about_path, class:"nav-link"%>
         </li>
 
-         <li class="nav-item">
-            <%= link_to "Shows", shows_path, class:"nav-link"%>
-        </li>
-
-
         <% if user_signed_in? %>
-
-          <li class="nav-item">
-            <%= link_to "Add Show", new_show_path, class:"nav-link"%>
-          </li>
 
           <li class="nav-item">
             <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class:"nav-link"%>

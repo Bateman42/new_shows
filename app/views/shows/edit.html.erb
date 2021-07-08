@@ -3,4 +3,5 @@
 <%= render 'form', show: @show %>
 
 <%= link_to 'Show', @show, class:"btn btn-outline-primary" %> 
+<%= link_to 'Delete', @show, method: :delete, data: { confirm: 'Are you sure?' }, class: " btn btn-outline-danger " %>
 <%= link_to 'Back', shows_path, class:"btn btn-outline-dark" %>
