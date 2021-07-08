@@ -1,5 +1,7 @@
 class ShowsController < ApplicationController
   before_action :set_show, only: %i[ show edit update destroy ]
+  before_action :authenticate_user!, expect: [:index, :show]  
+  before_action :correct_user, only: [:edit, :update, :destroy]
 
   # GET /shows or /shows.json
   def index
@@ -12,7 +14,8 @@ class ShowsController < ApplicationController
 
   # GET /shows/new
   def new
-    @show = Show.new
+    #@show = Show.new
+    @show = current_user.shows.build
   end
 
   # GET /shows/1/edit
@@ -21,7 +24,8 @@ class ShowsController < ApplicationController
 
   # POST /shows or /shows.json
   def create
-    @show = Show.new(show_params)
+    #@show = Show.new(show_params)
+    @show = current_user.shows.build(show_params)
 
     respond_to do |format|
       if @show.save
@@ -54,6 +58,11 @@ class ShowsController < ApplicationController
       format.html { redirect_to shows_url, notice: "Show was successfully destroyed." }
       format.json { head :no_content }
     end
+  end
+
+  def correct_user
+    @show = current_user.shows.find_by(id: params[:id])
+    redirect_to shows_path, notice: "Not Autorizes To Edit This Show" if @show.nil?
   end
 
   private
