@@ -73,6 +73,6 @@ class ShowsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def show_params
-      params.require(:show).permit(:name, :genre, :review, :similarity, :rating, :user_id)
+      params.require(:show).permit(:name, :genre, :review, :similarity, :rating, :user_id, :image)
     end
 end
