@@ -1,30 +1,14 @@
-
-<table class="table table-striped table-bordered table-hover">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Genre</th>
-      <th>Review</th>
-      <th>Similarity</th>
-      <th>Rating</th>
-    </tr>
-  </thead>
-
-  <tbody>
+<div class="raw">
     <% @shows.each do |show| %>
       <% if show.user == current_user %> 
-      <tr>
-        <td><%= link_to show.name, show %></td>
-        <td><%= show.genre %></td>
-        <td><%= show.review %></td>
-        <td><%= show.similarity %></td>
-        <td><%= show.rating %></td>
-      </tr>
+        <div class="col-sm-6 col-md-3 ">
+          <div class="thumbmails">
+            <%= link_to show do %>
+              <%= image_tag show.image, class: "img-thumbnail" %>
+            <% end %>
+          </div>
+        </div>
       <% end %>
     <% end %>
-  </tbody>
-</table>
+</div> 
 
-<br>
-
-<%= link_to 'New Show', new_show_path, class:"btn btn-outline-primary" %>
