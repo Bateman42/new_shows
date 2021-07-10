@@ -1,1 +1,1 @@
-
+The What to watch App is a wonderful place to keep track of your favorite movies and TV shows. It allows you to note the episode and season you stopped watching at, categorize your ratings, and compare similar shows. It is designed to be shared with friends who ask for movie and TV show recomendations. Now, instead of just frantically googling for similar shows to fill the void of game of thrones ending, they can simply pull up their friends profile and see which shows their friends have already used to cope with loseing their favorite TV show or movie
