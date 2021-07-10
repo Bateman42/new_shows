@@ -38,7 +38,7 @@
 
     <div class="field form-group">
     <% if @show.image.attached? %>
-      <%= image_tag @show.image, style: "width: 200xp; display: block" %>
+      <%= image_tag @show.image, style: "width: 200xp; display: block", :size => "310x380" %>
     <% end %> <br/>
 
     <% form.label :image %>
@@ -51,7 +51,7 @@
   </div>
 
   <div class="actions">
-    <%= form.submit class:'btn btn-info'%>
+    <%= form.submit class:'btn btn-success'%>
   </div>
   <br/>
 <% end %>
