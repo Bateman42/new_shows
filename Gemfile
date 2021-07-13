@@ -14,6 +14,7 @@ gem 'devise', '~> 4.8'
 gem 'image_processing', '~> 1.12', '>= 1.12.1'
 gem 'bootstrap-sass', '~> 3.4', '>= 3.4.1'
 gem 'jquery-rails'
+gem 'rails_12factor'
 
 gem 'bootsnap', '>= 1.4.4', require: false
 
