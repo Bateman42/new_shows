@@ -1,0 +1,57 @@
+<%= form_with(model: show) do |form| %>
+  <% if show.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(show.errors.count, "error") %> prohibited this show from being saved:</h2>
+
+      <ul>
+        <% show.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <br/>
+  <div class="field form-group">
+    <%= form.label :name %>
+    <%= form.text_field :name, class:"form-control", placeholder:"TV Show Name" %>
+  </div>
+  <br/>
+  <div class="field form-group">
+    <%= form.label :genre %>
+    <%= form.text_field :genre, class:"form-control"%>
+  </div>
+  <br/>
+  <div class="field form-group">
+    <%= form.label :review %>
+    <%= form.text_field :review, class:"form-control" %>
+  </div>
+  <br/>
+  <div class="field form-group">
+    <%= form.label :similarity %>
+    <%= form.text_field :similarity, class:"form-control", placeholder:"Similar Shows" %>
+  </div>
+  <br/>
+  <div class="field form-group">
+    <%= form.label :rating %>
+    <%= form.text_field :rating, class:"form-control" %>
+  </div> <br/>
+
+    <div class="field form-group">
+    <% if @show.image.attached? %>
+      <%= image_tag @show.image, style: "width: 200xp; display: block", :size => "310x380" %>
+    <% end %> <br/>
+
+    <% form.label :image %>
+    <%= form.file_field :image, class:"form-control",class:"img-thumbnail"  %>
+  </div>
+
+  <br/>
+  <div class="field form-group">
+    <%= form.number_field :user_id, id: :show_user_id, class:"form-control", value:current_user.id, type: :hidden  %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit class:'btn btn-success'%>
+  </div>
+  <br/>
+<% end %>

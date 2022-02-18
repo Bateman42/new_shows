@@ -1,0 +1,17 @@
+<div class="row">
+    <% @shows.each do |show| %>
+      <% if show.user == current_user %> 
+        <div class="col-sm-6 col-md-3 ">
+          <div class="thumbmails">
+            <%= link_to show do %>
+              <%= image_tag show.image, class: "img-thumbnail", :size => "260x180" %>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+</div> 
+
+<h2 class="text-center display-4">
+  <%= link_to "Create New Show", new_show_path, class:"btn btn-success"%>
+</h2>

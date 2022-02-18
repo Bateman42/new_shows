@@ -1,3 +1,8 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  devise_for :users
+  resources :shows #created by scaffold 
+  #get 'home/index'
+  get 'home/about'
+  #root 'home#index'
+  root 'shows#index'
 end
